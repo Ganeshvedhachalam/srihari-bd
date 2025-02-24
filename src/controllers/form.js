@@ -37,10 +37,11 @@ const sendEmail = async (toEmail, subject, message) => {
 
 const formSubmitController = async (req, res) => {
     const { name, email, phoneNumber, message } = req.body;
+    console.log("reqbdy", req.body)
     const clientFormData = JSON.stringify({ name, email, phoneNumber, message },null,2);
     try {
         console.log("making request", name, email, phoneNumber, message);
-        await sendEmail("jeevankumar3229@gmail.com", "New Client", clientFormData);//sauurabh02sonker@gmail.com
+        await sendEmail("ganeshvedha123@gmail.com", "New Client", clientFormData);//sauurabh02sonker@gmail.com //jeevankumar3229@gmail.com
         return res.status(200).json({ message: "Email sent successfully" });
     } catch (error) {
         console.log(error);
